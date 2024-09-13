@@ -7,9 +7,9 @@ def main_planner(guests: int) -> None:
     """Prints calculated information about tea party"""
     print("A Cozy Tea Party for " + str(guests) + " People!")
     print("Tea bags: " + str(tea_bags(people=guests)))
-    print("Treats " + str(treats(people=guests)))
+    print("Treats: " + str(treats(people=guests)))
     print(
-        "Cost: "
+        "Cost: $"
         + str(
             cost(tea_count=tea_bags(people=guests), treat_count=treats(people=guests))
         )
