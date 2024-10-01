@@ -9,7 +9,7 @@ def input_guess(num_characters: int) -> str:
     guess: str = input(f"Enter a {num_characters} character word: ")
     while len(guess) != num_characters:
         # continues taking inputs until input length = num_characters
-        guess = input(f"That wasn't {num_characters} characters! Try again: ")
+        guess = input(f"That wasn't {num_characters} chars! Try again: ")
     return guess
 
 
@@ -63,7 +63,7 @@ def main(secret: str) -> None:
         if emojified(guess, secret) == GREEN_BOX * len(secret):  # checks if user won
             print(f"You won in {turn}/6 turns!")
             # quits program is user wins
-            quit()
+            return None
         turn += 1  # adds 1 to current turn
     print("X/6 - Sorry, try again tomorrow!")
 
