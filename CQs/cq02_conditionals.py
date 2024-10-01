@@ -4,7 +4,8 @@ __author__: str = "730742450"
 
 
 def guess_a_number() -> None:
-    """Prompts user to guess a number and prints feedback comparing their input to the secret number"""
+    """Prompts user to guess a number and prints feedback
+    comparing their input to the secret number"""
     secret: int = 7
     guess: int = int(input("Guess a number: "))
     print("Your guess was " + str(guess))
