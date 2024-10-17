@@ -42,7 +42,7 @@ def test_sub_mutate() -> None:
 
 def test_sub_edge() -> None:
     """tests that sub returns correctly with out of bound start and end index"""
-    assert sub([25, 14, 36, 4, 8, 12], start=-2, end=500) == [25, 14, 36, 4, 8, 12]
+    assert sub([25, 14, 36, 4, 8, 12], -2, 500) == [25, 14, 36, 4, 8, 12]
 
 
 """add_at_index tests"""
@@ -50,13 +50,13 @@ def test_sub_edge() -> None:
 
 def test_add_at_index_return() -> None:
     """tests add_at_index returns None"""
-    assert add_at_index([18, 4, 37, 12], element=44, input_index=2) is None
+    assert add_at_index([18, 4, 37, 12], 44, 2) is None
 
 
 def test_add_at_index_mutate() -> None:
     """tests that add_at_index mutates list correctly"""
     the_list: list[int] = [18, 4, 37, 12]
-    add_at_index(the_list, element=44, input_index=2)
+    add_at_index(the_list, 44, 2)
     assert the_list == [18, 4, 44, 37, 12]
 
 
@@ -69,4 +69,4 @@ def test_add_at_index_raises_indexerror() -> None:
         add_at_index(the_list, 26, -4)
     with pytest.raises(IndexError):
         # an IndexError is raised when specified index is greater than list length
-        add_at_index(the_list, 26, 5)
+        add_at_index(the_list, 26, 6)

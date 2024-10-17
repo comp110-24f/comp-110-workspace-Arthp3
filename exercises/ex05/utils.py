@@ -16,9 +16,9 @@ def sub(the_list: list[int], start: int, end: int) -> list[int]:
     """creates a subset list between the specified start and end index"""
     if start < 0:
         # addresses a negative starting index by changing it to 0
-        index = 0
+        index: int = 0
     else:
-        index = start
+        index: int = start
     new_list: list[int] = []
     # Repeats until specified end index or end of the_list reached
     while (index < end) and (index < len(the_list)):
@@ -29,11 +29,11 @@ def sub(the_list: list[int], start: int, end: int) -> list[int]:
 
 def add_at_index(the_list: list[int], element: int, input_index: int) -> None:
     """adds specified element to specified index in list"""
-    if input_index < 0 or input_index > len(the_list) - 1:
+    if input_index < 0 or input_index > len(the_list):
         # ensures the specified index is within range
         raise IndexError("Index is out of bounds for the input list")
     the_list.append(0)  # lengthens list by 1 (to make space for new element)
-    index = len(the_list) - 1  # starts at the end of the list
+    index: int = len(the_list) - 1  # starts at the end of the list
     while index >= input_index:  # loops until the specified input_index is reached
         the_list[index] = the_list[index - 1]  # assigns value of previous index to next
         index -= 1
