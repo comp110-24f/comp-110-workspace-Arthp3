@@ -9,12 +9,13 @@ def w_sum(vals: list[float]) -> float:
     sum = 0
     while index < len(vals):  # repeats for length of list
         sum += vals[index]  # adds current index value to sum
+        index += 1
     return sum
 
 
-def f_sums(vals: list[float]) -> float:
+def f_sum(vals: list[float]) -> float:
     """returns sum of floats in list using for loop"""
-    sum = 0
+    sum = 0.0
     for value in vals:
         sum += value  # adds current value in list to sum
     return sum
@@ -22,7 +23,7 @@ def f_sums(vals: list[float]) -> float:
 
 def f_range_sum(vals: list[float]) -> float:
     """returns sum of floats in list using for ... in range () loop"""
-    sum = 0
+    sum = 0.0
     for index in range(0, len(vals)):
         sum += vals[index]  # adds current index value to sum
     return sum

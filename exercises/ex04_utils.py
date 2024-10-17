@@ -5,7 +5,7 @@ __author__ = "730742450"
 
 def all(the_list: list[int], the_int: int) -> bool:
     """indicates whether all ints in the list as the same as the_int"""
-    if(len(the_list)) == 0 #returns false if length of list is 0
+    if (len(the_list)) == 0:  # returns false if length of list is 0
         return False
     for index in the_list:  # repeats the following for every index in the list
         if index != the_int:
@@ -26,12 +26,14 @@ def max(the_list: list[int]) -> int:
 
 def is_equal(list1: list[int], list2: list[int]) -> bool:
     """returns true if every corresponding element in lists is equal"""
+    if len(list1) != len(list2):  # returns false if lengths are not equal
+        return False
     index = 0
     while index < len(list1):
-        if (list1[index] != list2[index]):  
+        if list1[index] != list2[index]:
             # returns false if the values at current index in both lists don't match
             return False
-        index +=1
+        index += 1
     return True
 
 
