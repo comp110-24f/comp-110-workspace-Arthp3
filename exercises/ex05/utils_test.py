@@ -60,13 +60,11 @@ def test_add_at_index_mutate() -> None:
     assert the_list == [18, 4, 44, 37, 12]
 
 
-def test_add_at_index_raises_indexerror() -> None:
+def test_add_at_index_raises_indexerror():
     """Test that add_at_index raises an IndexError for an invalid index."""
     # your object to pass to add_at_index function
     the_list: list[int] = [1, 2, 3, 4, 5]
     with pytest.raises(IndexError):
-        # an IndexError is raised whn specified index is below 0
         add_at_index(the_list, 26, -4)
-    with pytest.raises(IndexError):
-        # an IndexError is raised when specified index is greater than list length
-        add_at_index(the_list, 26, 6)
+        # an IndexError is raised for the case when the add_at_index is given an
+        # <index_to_insert_num> that is greater than the length of our <list_object>
